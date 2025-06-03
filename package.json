@@ -3,13 +3,17 @@
   "name": "markdown-enhancer",
   "displayName": "Markdown Enhancer",
   "description": "Adds extra features and tools to improve working with Markdown (.md) files in VS Code.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "engines": {
     "vscode": "^1.100.0"
   },
   "activationEvents": [
     "onLanguage:markdown"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hellsquietfr/markdown-enhancer-extension"
+  },
   "main": "./dist/extension.js",
   "icon": "images/icon.png",
   "contributes": {
@@ -17,10 +21,6 @@
       {
         "command": "markdown-enhancer.insertHeader",
         "title": "Insert Markdown Header"
-      },
-      {
-        "command": "markdown-enhancer.test",
-        "title": "Test Markdown Enhancer"
       },
       {
         "command": "markdown-enhancer.insertCodeBlock",
@@ -53,6 +53,61 @@
       {
         "command": "markdown-enhancer.refreshToc",
         "title": "Refresh Table of Contents"
+      },
+      {
+        "command": "markdown-enhancer.advancedTableEditor",
+        "title": "Advanced Table Editor"
+      },
+      {
+        "command": "markdown-enhancer.insertMermaidDiagram",
+        "title": "Insert Mermaid Diagram"
+      },
+      {
+        "command": "markdown-enhancer.insertMathEquation",
+        "title": "Insert Math Equation"
+      },
+      {
+        "command": "markdown-enhancer.insertFootnote",
+        "title": "Insert Footnote"
+      },
+      {
+        "command": "markdown-enhancer.insertEmoji",
+        "title": "Insert Emoji"
+      },
+      {
+        "command": "markdown-enhancer.pasteImageFromClipboard",
+        "title": "Paste Image from Clipboard",
+        "category": "Markdown Enhancer"
+      },
+      {
+        "command": "markdown-enhancer.wrapInCodeBlock",
+        "title": "Wrap Selection in Code Block",
+        "category": "Markdown Enhancer"
+      },
+      {
+        "command": "markdown-enhancer.wrapInBlockquote",
+        "title": "Wrap Selection in Blockquote",
+        "category": "Markdown Enhancer"
+      },
+      {
+        "command": "markdown-enhancer.insertCollapsibleSection",
+        "title": "Insert Collapsible Section",
+        "category": "Markdown Enhancer"
+      },
+      {
+        "command": "markdown-enhancer.lintMarkdown",
+        "title": "Lint Markdown",
+        "category": "Markdown Enhancer"
+      },
+      {
+        "command": "markdown-enhancer.exportToHtml",
+        "title": "Export to HTML",
+        "category": "Markdown Enhancer"
+      },
+      {
+        "command": "markdown-enhancer.showWordCount",
+        "title": "Show Word Count & Stats",
+        "category": "Markdown Enhancer"
       }
     ],
     "keybindings": [
@@ -94,6 +149,56 @@
       {
         "command": "markdown-enhancer.refreshToc",
         "key": "ctrl+shift+r",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.advancedTableEditor",
+        "key": "ctrl+shift+a",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertMermaidDiagram",
+        "key": "ctrl+shift+m",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertMathEquation",
+        "key": "ctrl+shift+e",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertFootnote",
+        "key": "ctrl+shift+n",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertEmoji",
+        "key": "ctrl+shift+j",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.pasteImageFromClipboard",
+        "key": "ctrl+shift+v",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.wrapInCodeBlock",
+        "key": "ctrl+shift+k",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.wrapInBlockquote",
+        "key": "ctrl+shift+q",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.lintMarkdown",
+        "key": "alt+shift+l",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.showWordCount",
+        "key": "ctrl+shift+w",
         "when": "editorTextFocus && editorLangId == markdown"
       }
     ]
