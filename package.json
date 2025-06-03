@@ -1,0 +1,133 @@
+{
+  "publisher": "Hellsquiet",
+  "name": "markdown-enhancer",
+  "displayName": "Markdown Enhancer",
+  "description": "Adds extra features and tools to improve working with Markdown (.md) files in VS Code.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.100.0"
+  },
+  "activationEvents": [
+    "onLanguage:markdown"
+  ],
+  "main": "./dist/extension.js",
+  "icon": "images/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "markdown-enhancer.insertHeader",
+        "title": "Insert Markdown Header"
+      },
+      {
+        "command": "markdown-enhancer.test",
+        "title": "Test Markdown Enhancer"
+      },
+      {
+        "command": "markdown-enhancer.insertCodeBlock",
+        "title": "Insert Code Block with Language"
+      },
+      {
+        "command": "markdown-enhancer.insertLink",
+        "title": "Insert Markdown Link"
+      },
+      {
+        "command": "markdown-enhancer.insertTable",
+        "title": "Insert Markdown Table"
+      },
+      {
+        "command": "markdown-enhancer.insertImage",
+        "title": "Insert Markdown Image"
+      },
+      {
+        "command": "markdown-enhancer.insertTaskList",
+        "title": "Insert Markdown Task List"
+      },
+      {
+        "command": "markdown-enhancer.formatText",
+        "title": "Format Markdown Text"
+      },
+      {
+        "command": "markdown-enhancer.generateToc",
+        "title": "Generate Table of Contents"
+      },
+      {
+        "command": "markdown-enhancer.refreshToc",
+        "title": "Refresh Table of Contents"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "markdown-enhancer.handleBacktick",
+        "key": "`",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertCodeBlock",
+        "key": "ctrl+shift+c",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertLink",
+        "key": "ctrl+shift+l",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertTable",
+        "key": "ctrl+shift+t",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.insertImage",
+        "key": "ctrl+shift+i",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.formatText",
+        "key": "ctrl+shift+f",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.generateToc",
+        "key": "ctrl+shift+g",
+        "when": "editorTextFocus && editorLangId == markdown"
+      },
+      {
+        "command": "markdown-enhancer.refreshToc",
+        "key": "ctrl+shift+r",
+        "when": "editorTextFocus && editorLangId == markdown"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack --mode none",
+    "watch": "webpack --watch --mode none",
+    "package": "cross-env NODE_ENV=production webpack --mode production --devtool hidden-source-map && javascript-obfuscator dist/extension.js --output dist/extension.js --config obfuscator.config.json",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "20.x",
+    "@types/vscode": "^1.100.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.1",
+    "@typescript-eslint/parser": "^8.31.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.5.2",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.25.1",
+    "javascript-obfuscator": "^4.1.1",
+    "terser-webpack-plugin": "^5.3.14",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.3",
+    "webpack": "^5.99.7",
+    "webpack-cli": "^6.0.1"
+  },
+  "categories": [
+    "Other",
+    "Formatters"
+  ]
+}
